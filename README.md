@@ -46,7 +46,7 @@ leftHandSideSymbol -> rightHandSideSymbol(s) *
 
 The star (*) signals the end of the rule's definition.
 
-After you have specifed all rules, input a hash '#' to signal the end of the grammar. Then, press Ctrl+D to signal end of input.
+After you have specifed all rules, input a hash '#' to signal the end of the grammar. Then, press `Ctrl`+`D` to signal end of input (Press `Ctrl`+`Z` followed by `Enter` if on Windows).
 
 The program will then output the requested information about the grammar.
 
