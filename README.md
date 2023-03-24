@@ -10,12 +10,7 @@ Then, based on the request, it will output one of:
 4. The FOLLOW sets of the grammar
 5. A "YES" or "NO" telling you whether or not the grammar has a predictive parser.
 
-To use this program, first run `make`:
-```bash
-make
-```
-
-This will compile the C++ files into an executable `parser.exe`.
+This C++ program has been compiled into an executable `parser.exe`.
 
 To use the program, you will pass in a number in [1 - 5] as a command line argument to the executable telling the program which task to run.
 
@@ -25,14 +20,30 @@ To use the program, you will pass in a number in [1 - 5] as a command line argum
 
 The program will wait for the grammar from standard input.
 
-The grammar should be inputted in this format:
+The program expects a Grammar in this format:
 
-For each rule, you specify it as
+Grammar -> Rule-list HASH
+Rule-list -> Rule Rule-list | Rule
+Rule -> ID ARROW Right-hand-side STAR
+Right-hand-side -> Id-list | ε
+Id-list -> ID Id-list | ID
+
+The ID, STAR, HASH, and ARROW tokens are defined as follows:
+
+ID = letter (letter | digit)*
+STAR = '*'
+HASH = '#'
+ARROW = '->'
+
+So basically for each rule, you specify it as
+
 leftHandSideSymbol -> rightHandSideSymbol(s) *
 
 The star '*' signals the end of the rule's definition.
 
-After you have specifed all rules, input a hash '#' to signal the end of the grammar. Then, press Ctrl+D to signal end of input.
+After you have specifed all rules, input a hash '#' to signal the end of the grammar. Then, press `Ctrl`+`D` to signal end of input.
+
+The program will then output the requested information about the grammar.
 
 You can either choose to input your own grammar like this or test the program using the automated test script `test_p3.sh` by doing:
 ```bash
