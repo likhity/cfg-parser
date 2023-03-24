@@ -33,9 +33,9 @@ Id-list -> ID Id-list | ID
 The ID, STAR, HASH, and ARROW tokens are defined as follows:
 
 ```
-ID = letter (letter | digit)*\
-STAR = '*'\
-HASH = '#'\
+ID = letter (letter | digit)*
+STAR = '*'
+HASH = '#'
 ARROW = '->'
 ```
 
