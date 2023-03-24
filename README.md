@@ -22,26 +22,26 @@ The program will wait for the grammar from standard input.
 
 The program expects a Grammar in this format:
 
-Grammar -> Rule-list HASH
-Rule-list -> Rule Rule-list | Rule
-Rule -> ID ARROW Right-hand-side STAR
-Right-hand-side -> Id-list | ε
-Id-list -> ID Id-list | ID
+Grammar -> Rule-list HASH\
+Rule-list -> Rule Rule-list | Rule\
+Rule -> ID ARROW Right-hand-side STAR\
+Right-hand-side -> Id-list | ε\
+Id-list -> ID Id-list | ID\
 
 The ID, STAR, HASH, and ARROW tokens are defined as follows:
 
-ID = letter (letter | digit)*
-STAR = '*'
-HASH = '#'
-ARROW = '->'
+ID = letter (letter | digit)*\
+STAR = '*'\
+HASH = '#'\
+ARROW = '->'\
 
 So basically for each rule, you specify it as
 
 leftHandSideSymbol -> rightHandSideSymbol(s) *
 
-The star '*' signals the end of the rule's definition.
+The star (*) signals the end of the rule's definition.
 
-After you have specifed all rules, input a hash '#' to signal the end of the grammar. Then, press `Ctrl`+`D` to signal end of input.
+After you have specifed all rules, input a hash '#' to signal the end of the grammar. Then, press Ctrl+D to signal end of input.
 
 The program will then output the requested information about the grammar.
 
