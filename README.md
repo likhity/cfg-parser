@@ -10,6 +10,8 @@ Then, based on the request, it will output one of:
 4. The FOLLOW sets of the grammar
 5. A "YES" or "NO" telling you whether or not the grammar has a predictive parser.
 
+Clone this repository if you want to test out the program.
+
 This C++ program has been compiled into an executable `parser.exe` (Use `parser_w.exe` if on Windows).
 
 To use the program, you will pass in a number in [1 - 5] as a command line argument to the executable telling the program which task to run.
