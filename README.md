@@ -23,32 +23,29 @@ To use the program, you will pass in a number in [1 - 5] as a command line argum
 
 The program will wait for the grammar from standard input.
 
-The program expects a Grammar in this format:
+The program expects an input Grammar in this format:
 
-```
-Grammar -> Rule-list HASH
-Rule-list -> Rule Rule-list | Rule
-Rule -> ID ARROW Right-hand-side STAR
-Right-hand-side -> Id-list | ε
-Id-list -> ID Id-list | ID
-```
-
-The ID, STAR, HASH, and ARROW tokens are defined as follows:
-
-```
-ID = letter (letter | digit)*
-STAR = '*'
-HASH = '#'
-ARROW = '->'
-```
-
-So basically for each rule, you specify it as
+Each rule is expected to be inputted like this: a left-hand-side non-terminal, followed by an arrow, followed by zero or more space-separated right-hand-side symbols, followed by a star (*).
 
 leftHandSideSymbol -> rightHandSideSymbol(s) *
 
-The star (*) signals the end of the rule's definition.
+If you input zero right hand side symbols, the program will take that as meaning the leftHandSideSymbol generates epsilon (the empty string "").
 
-After you have specifed all rules, input a hash '#' to signal the end of the grammar. Then, press `Ctrl`+`D` to signal end of input (Press `Ctrl`+`Z` followed by `Enter` if on Windows).
+The star character (*) signals the end of the rule's definition.
+
+After you have specifed all rules, use a hash '#' to signal the end of the grammar. 
+
+An example input looks like this:
+```
+decl -> idList colon ID *
+idList -> ID idList1 *
+idList1 -> *
+idList1 -> COMMA ID idList1 *
+#
+```
+In this example, `idList1` can generate the empty string or `COMMA ID idList1`.
+
+After you have inputted your grammar, press `Ctrl`+`D` to signal end of input (Press `Ctrl`+`Z` followed by `Enter` if on Windows).
 
 The program will then output the requested information about the grammar.
 
