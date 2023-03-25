@@ -23,7 +23,7 @@ To use the program, you will pass in a number in [1 - 5] as a command line argum
 
 The program will wait for the grammar from standard input.
 
-The program expects an input Grammar in this format:
+### Inputting The Grammar
 
 Each rule is expected to be inputted like this: a left-hand-side non-terminal, followed by an arrow, followed by zero or more space-separated right-hand-side symbols, followed by a star (*).
 
@@ -48,6 +48,8 @@ In this example, `idList1` can generate the empty string or `COMMA ID idList1`.
 After you have inputted your grammar, press `Ctrl`+`D` to signal end of input (Press `Ctrl`+`Z` followed by `Enter` if on Windows).
 
 The program will then output the requested information about the grammar.
+
+### Tests
 
 You can either choose to input your own grammar like this or test the program using the automated test script `test.sh` (Use `test_w.sh` if on Windows) by doing:
 ```bash
